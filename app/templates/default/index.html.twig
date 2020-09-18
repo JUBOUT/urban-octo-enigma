@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block breadcrumb %}
+        {{ wo_render_breadcrumbs() }}
+{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+        <div class="form-group">
+            <div class="row">
+                <div class="col-2">{{ form_label(form.FirstName) }}</div>
+                <div class="col-2">{{ form_label(form.LastName) }}</div>
+            </div>
+            <div class="row" style="margin-bottom: 10px">
+                <div class="col-2">{{ form_widget(form.FirstName) }}</div> 
+                <div class="col-2">{{ form_widget(form.LastName) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-2">{{ form_label(form.Country) }}</div>
+            </div>
+            <div class="row" style="margin-bottom: 10px">
+                <div class="col-2">{{ form_widget(form.Country) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-2">{{ form_label(form.PhoneNumber) }}</div>
+            </div>
+            <div class="row"style="margin-bottom: 10px">
+                <div class="col-3">{{ form_widget(form.PhoneNumber) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-3">{{ form_widget(form.save, {'label': 'Call me', 'label_attr': 'btn btn primary'}) }}</div>
+            </div>
+        </div>
+    {{ form_end(form) }}
+{% endblock %}

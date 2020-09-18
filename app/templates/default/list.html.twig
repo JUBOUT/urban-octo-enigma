@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block breadcrumb %}
+    {{ wo_render_breadcrumbs() }}
+{% endblock %}
+
+{% block body %}
+<style>
+    .header{font-weight: bold;}
+    .tableau{max-width: 130px; width:auto; border-width: 1px; border-style:solid; border-color:black; font-size:14px; max-height:20px; text-align:right}
+    #id{max-width:50px}
+    #PhoneNumberInternational{max-width:170px}
+</style>
+
+<div class="container">
+    <div class="row">          
+        {% for header in phone_headers %}
+        <div id="{{ header.name }}" class="header tableau col-2">{{ header.name }}</div>
+        {% endfor %}
+    </div>
+    {% for phone in phones %}
+        <div class="row">
+            <div id="id" class="col-2 tableau">{{ phone.Id }}</div>
+            <div class="col-2 tableau">{{ phone.FirstName }}</div>
+            <div class="col-2 tableau">{{ phone.LastName }}</div>
+            <div class="col-2 tableau">{{ phone.PhoneNumber }}</div>
+            <div id="PhoneNumberInternational" class="col-2 tableau">{{ phone.PhoneNumberInternational }}</div>
+            <div class="col-2 tableau">{{ phone.Country.Name }}</div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,6 @@
+{
+    "require": {
+        "solo/validator": "^1.0",
+        "symfony/form": "^5.1"
+    }
+}
